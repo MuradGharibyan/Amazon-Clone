@@ -1,9 +1,9 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 
-export function addToCart(cartAddItem) {
+export function addToCart(id) {
   return {
     type: ADD_TO_CART,
-    payload: cartAddItem
+    payload: id
   }
 }
 

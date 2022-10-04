@@ -12,11 +12,7 @@ const Header = () => {
           <div className='logoBtn' ><img className='logo' src={'https://stmarysecc.org/wp-content/uploads/2021/09/Amazon-Logo.png'} alt={'amazon'}/></div>
         </Link>
         <div className='search'>
-          <Input
-            style={{
-              width: '95%',
-              backgroundColor: 'white'
-            }}/>
+          <input />
           <div className="header__searchIcon">
             <svg stroke="currentColor" fill="currentColor"  viewBox="0 0 1024 1024" height="1em"
                  width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +22,7 @@ const Header = () => {
           </div>
         </div>
         <div className='headerBtn' ><span>English</span> <div><img className='logoFlag' src={'https://img.freepik.com/premium-vector/jamusaaica-flag-with-waving-effect-official-proportion_292608-3088.jpg?w=2000'} alt={'amazon'}/></div></div>
-        <Link to={''}>
+        <Link to={'/login'}>
           <div className='headerBtn'  ><span>Hello, guest</span><div><b>Sign in</b></div></div>
         </Link>
         <Link to={''}>
@@ -41,8 +37,6 @@ const Header = () => {
             <span>Cart</span>
           </div>
         </Link>
-
-
       </header>
     </div>
   );

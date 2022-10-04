@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import '../src/styles/amazonStyles.css'
+import './assets/styles/amazonStyles.css'
 import rootReducer from './store/reducer';
 import { legacy_createStore as createStore } from 'redux';
 
