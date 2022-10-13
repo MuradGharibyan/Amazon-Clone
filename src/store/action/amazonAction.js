@@ -25,3 +25,30 @@ export function deleteAllFromCart() {
   }
 }
 
+export const CREATE_USER = 'CREATE_USER';
+
+export function createUser(createdUser) {
+  return {
+    type: CREATE_USER,
+    payload: createdUser
+  }
+}
+
+export const SIGN_IN_USER = 'SIGN_IN_USER';
+
+export function signInUser(signedUser) {
+  return {
+    type: SIGN_IN_USER,
+    payload: signedUser
+  }
+}
+export const RESET_SINGLE_USER = 'RESET_SINGLE_USER';
+
+export function singleUserReset() {
+  return {
+    type: RESET_SINGLE_USER,
+    payload: []
+  }
+}
+
+

@@ -1,10 +1,16 @@
 import React from 'react';
 import {Link} from  'react-router-dom'
-import { Input } from '@mui/material';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { singleUserReset } from '../store/action/amazonAction';
 
 const Header = () => {
+  const dispatch = useDispatch()
   let basket  = useSelector((state)=> state.amazon.basket.length)
+  const users = useSelector((state)=> state.amazon.activeUser)
+  const resetSingleUser = () => {
+    dispatch(singleUserReset())
+  }
+  console.log(users[users.length - 1]);
   return (
     <div>
       <header className="header">
@@ -22,8 +28,8 @@ const Header = () => {
           </div>
         </div>
         <div className='headerBtn' ><span>English</span> <div><img className='logoFlag' src={'https://img.freepik.com/premium-vector/jamusaaica-flag-with-waving-effect-official-proportion_292608-3088.jpg?w=2000'} alt={'amazon'}/></div></div>
-        <Link to={'/login'}>
-          <div className='headerBtn'  ><span>Hello, guest</span><div><b>Sign in</b></div></div>
+        <Link to={'/login'} >
+          <div className='headerBtn' onClick={resetSingleUser} ><span>Hello, {users.length && users[users.length - 1].email || 'guest'}</span><div><b>{users.length && users[users.length - 1].email ? 'Sign Out': 'Sign in'}</b></div></div>
         </Link>
         <Link to={''}>
           <div className='headerBtn' ><span>Returns</span><div><b>& orders</b></div>  </div>

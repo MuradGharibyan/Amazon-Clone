@@ -2,6 +2,7 @@ import React, {} from 'react';
 import Header from '../components/header';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteAllFromCart, deleteFromCart } from '../store/action/amazonAction';
+import Rating from 'react-rating-stars-component';
 
 const Cart = () => {
   const basket = useSelector((state) => state.amazon.basket);
@@ -43,6 +44,14 @@ const Cart = () => {
                     <p>This is a gift </p>
                     <button className="learn__btn">Learn More</button>
                   </div>
+                  <Rating
+                    classNames='ratingStar'
+                    count={5}
+                    value={p.rating}
+                    size={24}
+                    activeColor="#ffa41c"
+                    isHalf={true}
+                  />
                   <div className="cart__btns">
                     <button className="delete__save__btn" id={p.id} onClick={(ev) => deleteClick(ev)}>Delete</button>
                     <div className="vertical__line">
